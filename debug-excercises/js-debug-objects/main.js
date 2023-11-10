@@ -68,18 +68,18 @@ const cars = [
 //il sesto errore sta nella scrittura di Benzina, ha la B maiuscola
 
 
-const gasolineCars = cars.filter( (auto) => auto.type === 'benzina');
+const gasolineCars = cars.filter( (auto) => auto.type.toLowerCase() === 'benzina');
 //il secondo errore sta nella scrittura di >=, vanno invertiti
 const dieselCars = cars.filter( (auto) => {
-    return auto.type === 'diesel';
+    return auto.type.toLowerCase() === 'diesel';
 });
 //il terzo errore sta nella mancanza del return
 
 const otherCars = cars.filter( (auto) => {
-    return auto.type !== 'benzina' && auto.type !== 'diesel';
+    return auto.type.toLowerCase() !== 'benzina' && auto.type.toLowerCase() !== 'diesel';
 });
 //il quarto errore sta nell'|| , va messo un &&
-
+//aggiunto .toLowerCase() per controllare qualsiasi dato ci venga inserito, senza dover controllare se siano scritti tutti maiuscoli o minuscoli
 
 //questo codice restituisce in tre scritte differenti, tutte le auto di un certo tipo
 console.log('Auto a benzina');
