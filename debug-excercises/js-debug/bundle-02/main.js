@@ -11,8 +11,7 @@
 
 
 // ESERCIZIO 1
-function checkAge() {
-    const myAge = 32;
+function checkAge(myAge) {
     let message = '';
 
     if (myAge < 18) {
@@ -22,7 +21,7 @@ function checkAge() {
     }
     return message
 }
-console.log(checkAge());
+console.log(checkAge(32));
 //questa funzione dovrebbe restituire un mesaggio in base all'eta che ho
 //il primo errore sta nel mettere const a message, va messo let
 //il secondo errore é che manca il return del message
