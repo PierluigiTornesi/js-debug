@@ -1,17 +1,22 @@
 const input = document.querySelector('input');
-const array = null;
+const array = [];
+//il primo errore sta nell'inizializzazione dell'array
+//non va messo a null ma scritto array = []
 
 input.addEventListener('keypress', function(event) {
 
     if (event.code != 'Enter')    return;
     if (input.value.length == '') return;
 
-    array.add(input.value);
+    array.push(input.value);
+    //il secondo errore sta nella funzione add, va usata push per inserire un valore dentro un array
 
     const li = document.createElement('li');
     li.classList.add('list-group-item');
     li.text = input.value;
-    document.querySelector('ul').push(li);
+    document.querySelector('ul').append(li);
+    //il terzo errore sta in push, non é un metodo per aggiungere un elemento dell'html, in questo caso li, dentro ul. Va usato append
+    
 
     let counter = '';
     let item    = array[0];
